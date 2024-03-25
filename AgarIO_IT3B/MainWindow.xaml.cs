@@ -20,5 +20,25 @@ namespace AgarIO_IT3B
     {
       InitializeComponent();
     }
+  
+    public void See()
+        {
+            double y = canvasGame.ActualHeight / 2;
+            double x = canvasGame.ActualWidth / 2;
+
+            Player player = new Player(Brushes.Blue, "Martin")
+            {
+                Location = new Point(x,y),
+            };
+            Ellipse ellipse = new Ellipse()
+            {
+                Fill = player.Color,
+                Width = player.Size,
+                Height = player.Size,
+            };
+            canvasGame.Children.Add(ellipse);
+            Canvas.SetLeft(ellipse, player.Location.X);
+            Canvas.SetTop(ellipse, player.Location.Y);
+        }
   }
 }
