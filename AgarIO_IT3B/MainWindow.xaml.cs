@@ -20,8 +20,9 @@ namespace AgarIO_IT3B
     {
       InitializeComponent();
     }
-  
-    public void See()
+        Ellipse ellipse = new Ellipse();
+    
+        public void See()
         {
             double y = canvasGame.ActualHeight / 2;
             double x = canvasGame.ActualWidth / 2;
@@ -30,7 +31,7 @@ namespace AgarIO_IT3B
             {
                 Location = new Point(x,y),
             };
-            Ellipse ellipse = new Ellipse()
+            new Ellipse()
             {
                 Fill = player.Color,
                 Width = player.Size,
@@ -48,8 +49,8 @@ namespace AgarIO_IT3B
             double pY = position.Y;
 
             // Sets the Height/Width of the circle to the mouse coordinates.
-            Ellipse.Width = pX;
-            Ellipse.Height = pY;
+            ellipse.Width = pX;
+            ellipse.Height = pY;
         }
 
         private void canvasGame_Loaded(object sender, RoutedEventArgs e)
